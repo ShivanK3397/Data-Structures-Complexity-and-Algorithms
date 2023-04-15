@@ -46,7 +46,18 @@ print(newlist)
 Example: 
 ```
 python
+def myfunc(a):
+  return len(a)
+
+x = map(myfunc, ('apple', 'banana', 'cherry'))
+
+print(x)
+
+#convert the map into a list, for readability:
+print(list(x))
 ```
+Output: 
+```[5,5,6]```
 ### Filter Function 
 - The filter function works by filtering data from an sequence of iterable data that meets a certain condition 
 - The formatting of the function is like so filter(function_name, sequence of iterable data)
@@ -106,5 +117,25 @@ Output:
 ('hello','world',63,'print')
 
 ### Sets
+- Sets are a built in data type in python used to store data 
+- The data stored in sets are unordered and cannot be duplicated 
+- Sets are created with the curly brackets Ex: {}
+- Set's have built-in functions like lists and tuples. Some common ones are len(), min(), and max()
+- Sets are mutable meaning you can add and remove values from them 
+- Set's are not indexable and slicable like lists and tuples but they're iterable
+- Set comprehension can be done just like list comprehension 
 
-### Dictionary  .........................................................................................
+#### Set Operators
+- Membership: Ascertains whether a value exists or doesn't exist in our function. 
+- Union: Joins the values of sets into one single set. This is done like this ```result = set_a|set_b```
+- Intersection: Checks what values exist in both sets. This is done like this ```result = set_a & set_b```. Printing result would print only the values in both set_a and set_b
+- Difference: Checks what values exist solely in the first set. This is done like this ```result = set_a - set_b```. Printing result would print the values only in set_a
+- Symmetric difference: Checks what value exist in one or the other set, but not in both. This is done like this ```result = set_a^set_b``` 
+- Proper subset: Is a boolean operator, returns true if all values in set_a are in set_b, and set_b is not the exact same as set_a. This is done like this ```set_a < set_b```
+- Subset: Is a boolean operator, returns true if all values in set_a are in set_b, set_a can be equal to set_b and the value will still be true. This is done like this ``` set_a <= set_b```
+- Proper superset: Is a boolean operator, returns true if set_b has all the values of set_a, but set_a is not equal to it. This is done like this ```set_a > set_b```
+- Superset: Is a boolean operator, returns true if all values in set_b are in set_a, set_b can be equal to set_a and the value will still be true. This is done like this ``` set_a >= set_b```
+
+Disjoint is a boolean method that returns true if all the values in set_a are not in set_b. This method is done like this ``` set_a.disjoint(set_b)
+
+### Dictionary 
