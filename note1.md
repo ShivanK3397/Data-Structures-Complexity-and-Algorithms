@@ -8,8 +8,7 @@ In python, there is no specific data structure that represents a matrix and so w
 - All items in the 2d list must have the same data types 
 
 Example: 
-```
-python
+```python
 matrix_1 = [
     [5, 2, 1, 3],
     [2, 1, 6, 3]
@@ -28,8 +27,7 @@ List Comprenhension must consist of the following
 - Optional if clauses depending on how complex the list is
 
 Example:
-```
-python
+```python
 fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
 
 newlist = [x for x in fruits if "a" in x]
@@ -44,8 +42,7 @@ print(newlist)
 - This allows you to create list's with this function 
 
 Example: 
-```
-python
+```python
 def myfunc(a):
   return len(a)
 
@@ -76,8 +73,7 @@ Output:
 #### Indexing and Slicing 
 - Tuples can be indexed and sliced the same way that lists are, with square brackets []
 Example:
-```
-python
+```python
 tup = (1,4,65,4)
 
 print(tup[2])
@@ -101,8 +97,7 @@ Example of Built-In Functions:
 #### Tuple Packing and Unpacking 
 - Tuples can be both packed ane unpacked
 - Packing in coding terms simply means packing togther multiple variables into a tuple with unpacking being the opposite 
-```
-python
+```python
 var1 = 'hello'
 var2 = 'world'
 var3 = 63
@@ -139,3 +134,118 @@ Output:
 Disjoint is a boolean method that returns true if all the values in set_a are not in set_b. This method is done like this ``` set_a.disjoint(set_b)
 
 ### Dictionary 
+- Dictionarys are another build in data type in python used to store data
+- The data stored are a collection of key,value pairs 
+- Dictionary's are formatted like so ``` dictionary_name = {key:value}
+
+Example:
+``` python
+sammy = {
+    'username': 'sammy',
+    'online': True,
+    'followers': 42
+}
+```
+#### Dictionary Properties
+- Key's must be an immutable datatype (Ex: strings,numbers,tuples,frozenset)
+- Key's must be unique, you cannot have two key's with the same values in a single dictionary 
+- Values however can be any type of datatype
+- Dictionary's can be updated in three ways, modifiy an existing value, adding a new value and key, and reassigning a key with a new value
+Example: 
+```python
+
+sammy = {
+    'username': 'sammy',
+    'online': True,
+    'followers': 42
+}
+
+sammy['followers'] += 10 # We are adding 10 to the value located at key: 'followers'
+sammy['verified'] = True # We added a new value at a new key: 'verified'
+sammy['username'] = 'SammySammy'
+
+print('Sammy Dict:', sammy)
+```
+Output: Sammy Dict: {'username': 'SammySammy', 'online': True, 'followers': 52, 'verified': True}
+
+- You can also delete values from dictionary's
+- This can be done by deleting a key which deletes it's value, emptying out the whole dictionary, or completely deleting the dictionary 
+
+Example:
+```python
+sammy = {
+    'username': 'sammy',
+    'online': True,
+    'followers': 42
+}
+
+del sammy['followers'] # del is a keyword used to help us to execute a removal
+print('followers key deleted:', sammy)
+
+sammy.clear() # {} is considered an empty dict
+print('emptying out a dictionary', sammy)
+print('--\n\n')
+
+del sammy
+print('Deleting sammy, should create an error when referenced again', sammy)
+
+```
+```
+Output: followers key deleted: {'username': 'sammy', 'online': True}
+emptying out a dictionary {}
+--
+
+
+
+
+
+---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+<ipython-input-11-d3cbe81f2de2> in <module>
+     15
+     16 del sammy
+---> 17 print('Deleting sammy, should create an error when referenced again', sammy)
+
+
+NameError: name 'sammy' is not defined
+```
+#### Dictionary Operators, Methods, and Built-In Functions
+- Dictionary has a membership operator which can be used to check if a value is in the dictionary or not
+- Some common dictionary built in functions inclue len(), max(), min(), str(),list(), etc
+- Dictionary like all datatypes in python has methods that can be used on it
+- The A.copy() method allows you to copy dictionary A 
+- The A.keys() method returns a sequence of keys in dictionary A
+- The A.values() method returns a sequence of values in dictionary A
+- The A.items() method returns a sequence of key:value pairs in dictionary A
+- A.get(address) returns the item pair in  dictionary A at the specified address
+- A.update(B) updates dictionary A with the items in dictionary B
+
+#### Iterating in Dictionaries
+- You can iterate the keys, values, and items in a dictionary like so
+```python
+sammy = {
+    'username': 'sammy',
+    'online': True,
+    'followers': 42
+}
+
+for k in sammy.keys():
+    print('Current key:', k)
+print('--\n')
+
+# Iteration Example 2: Values
+
+for v in sammy.values():
+    print('Current value:', v)
+print('--\n')
+
+# Iteration Example 3: Key, Value Pair
+
+for k, v in sammy.items():
+    print('Current Key:', k)
+    print('Current Value:', v)
+    print()
+```
+#### Turning other datatypes into dictionaries 
